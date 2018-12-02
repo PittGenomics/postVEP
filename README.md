@@ -8,7 +8,7 @@ The Python package helps you analyze Variant Effect Predictor (VEP) result.
 
 ## Installation
 
-- `pip install .`
+`pip install .`
 
 ## Quick start
 
@@ -17,6 +17,7 @@ from postVEP import VEPresult
 r = VEPresult('./example/output_with_plugin.tsv') # r.data is a pandas DataFrame
 print(r.get_all_col_names())
 print(r.get_col_info('gnomAD_exomes_ASJ_AF'))
+print(r.get_col_by_name('Allele'))
 ```
 
 ## Report issuse

@@ -44,3 +44,6 @@ class VEPresult():
 
     def get_col_info(self, key):
         return self.col_desc.get(key)
+
+    def get_col_by_name(self, key):
+        return self.data[key]
