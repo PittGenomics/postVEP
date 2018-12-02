@@ -1,6 +1,6 @@
 # postVEP
 
-Python package helps you analyze Variant Effect Predictor (VEP) result.
+The Python package helps you analyze Variant Effect Predictor (VEP) result.
 
 ## Prerequisite
 
@@ -14,6 +14,7 @@ Python package helps you analyze Variant Effect Predictor (VEP) result.
 
 ``` python
     from postVEP import VEPresult
-    r = VEPresult('./example/output_with_plugin.tsv')
-    # r.data is a pandas DataFrame
+    r = VEPresult('./example/output_with_plugin.tsv') # r.data is a pandas DataFrame
+    print(r.get_all_col_names())
+    print(r.get_col_info('gnomAD_exomes_ASJ_AF'))
 ```
