@@ -42,8 +42,29 @@ class VEPresult():
     def get_all_col_names(self):
         return self.col_desc.keys()
 
+    def get_missing_cols(self):
+        return set(self.col_desc.keys()) - set(self.col_desc.keys())
+
     def get_col_info(self, key):
         return self.col_desc.get(key)
 
     def get_col_by_name(self, key):
         return self.data[key]
+
+    # this function will return LinkVaraiants Column into following format:
+    # {'rs9841454': 1.0, 'rs16823078': 0.845}
+    def get_LD_col(self, key):
+        if 'LinkedVariants' in key:
+            return self.data[key].apply(seperate)
+
+
+def seperate(line):
+    if isinstance(line, float):
+        return {}
+    else:
+        temp = line.split(',')
+        data = {}
+        for t in temp:
+            key, value = t.split(':')
+            data[key] = float(value)
+        return data
