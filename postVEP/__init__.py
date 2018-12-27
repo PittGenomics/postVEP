@@ -43,7 +43,7 @@ class VEPresult():
         return self.col_desc.keys()
 
     def get_missing_cols(self):
-        return set(self.col_desc.keys()) - set(self.col_desc.keys())
+        return set(self.col_desc.keys()) - set(self.data.columns)
 
     def get_col_info(self, key):
         return self.col_desc.get(key)

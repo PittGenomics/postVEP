@@ -16,11 +16,13 @@ The Python package helps you analyze Variant Effect Predictor (VEP) result.
 from postVEP import VEPresult
 r = VEPresult('./example/output_with_plugin.tsv') # r.data is a pandas DataFrame
 print(r.get_all_col_names())
-print(r.tget_missing_cols())
+print(r.get_missing_cols())
 print(r.get_col_info('gnomAD_exomes_ASJ_AF'))
 print(r.get_col_by_name('Allele'))
 print(r.get_LD_col('LinkedVariants_CHS'))
 ```
+
+To learn more, check our [tutorial in Jupyter Notebook](example/tutorial.ipynb)
 
 ## Report issuse
 
